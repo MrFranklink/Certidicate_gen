@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="<%= delay %>;url=<%= redirectUrl %>">
+    <title>Emails Sent Successfully</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column; 
+        }
+
+        h1, p {
+            text-align: center;
+            margin: 0; 
+        }
+
+        p {
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Emails Sent Successfully!</h1>
+    <p>Redirecting to home page in <span id="countdown"><%= delay %></span> seconds...</p>
+
+    <script>
+        // Countdown logic
+        let countdownValue = <%= delay %>;
+        function updateCountdown() {
+            document.getElementById('countdown').innerText = countdownValue;
+            countdownValue--;
+
+            if (countdownValue < 0) {
+                window.location.href = '<%= redirectUrl %>';
+            } else {
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+
+      
+        updateCountdown();
+    </script>
+</body>
+</html>
