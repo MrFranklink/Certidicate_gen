@@ -1,7 +1,5 @@
 # Certificate Generator
 
-![Certificate Generator Logo/Image]
-
 ## Overview
 
 The Certificate Generator is a web application designed to simplify the creation and distribution of certificates based on information provided in an Excel file. This project aims to streamline the certificate management process for organizations and individuals.
